@@ -72,10 +72,11 @@ main {
 
 .portfolio-item {
     margin-bottom: 1rem;
-    background-color: #2f2f2f;
+    background-color: #ffffff;
     padding: 4rem;
     text-align: justify;
     border-radius: .5rem;
+    box-shadow: .10rem .10rem .5rem #333232;
 }
 
 .portfolio-item img {
@@ -95,9 +96,8 @@ main {
 
 .portfolio-section {
     margin-bottom: 5rem;
-  background-color: #ffffff;
     border-radius: 0.5rem;
-    box-shadow: .10rem .10rem .5rem #333232;
+    
 
 }
 
