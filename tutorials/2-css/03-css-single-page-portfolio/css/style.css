@@ -54,7 +54,7 @@ header {
 @media (max-width: 700px){
     header {
         padding-left: 2rem;
-        ma
+        
     }
 }
 
@@ -78,7 +78,7 @@ nav a {
 
 }
 
-@media (max-width: 700px) {}
+@media (max-width: 700px) {
     nav a {
         margin: 0.5rem;
     }
@@ -89,8 +89,6 @@ nav a:hover {
     text-decoration-color: var(--bg-color-1);
     color: var(--accent-1);
     transform: scale(1.2);
-
-
 }
 
 main {
