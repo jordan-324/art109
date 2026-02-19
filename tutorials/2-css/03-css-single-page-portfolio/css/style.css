@@ -74,7 +74,7 @@ nav a {
     color: var(--font);
     display: inline-block;
     margin: 0 1rem;
-    transition: all .5s ease;
+    transition: .3s ease, color .3s ease, background-color;
 
 }
 
@@ -114,9 +114,9 @@ main {
     margin-bottom: 5rem;
 }
 
-.about-content,
-.portfolio-content,
-.contact-content {
+.about-section,
+.portfolio-section,
+.contact-section {
     max-width: 50rem;
     margin: 0 auto;
     padding: 2rem 0;
