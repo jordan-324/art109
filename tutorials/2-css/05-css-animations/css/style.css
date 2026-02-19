@@ -1,0 +1,135 @@
+body {
+    animation: change-color 10s infinite alternate;
+}
+
+@keyframes change-color {
+    0% {
+        background-color: antiquewhite;
+    }
+
+    50% {
+        background-color: aquamarine;
+    }
+
+    100% {
+        background-color: rgb(242, 255, 4);
+    }
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 80px auto;
+    animation: skew 3s infinite alternate;
+
+}
+
+@keyframes skew {
+    0% {
+        transform: skew(0deg, 0deg);
+    }
+
+    100% {
+        transform: skew(30deg, 20deg);
+    }
+}
+
+.square {
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 50px auto;
+    transition: all 1s;
+}
+
+.square:hover {
+    background-color: greenyellow;
+    transform: rotate(30deg);
+}
+
+.button-div {
+    text-align: center;
+
+}
+
+.button {
+    background-color: green;
+    color: white;
+    padding: 15px;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .5s;
+}
+
+.button:hover {
+    background-color: greenyellow;
+    color: black;
+    transform: scale(1.5);
+}
+
+.loading {
+    background-color: green;
+    animation: stretch 8s infinite alternate;
+    width: 80vw;
+
+}
+
+@keyframes stretch {
+    0% {
+        width: 100px;
+    }
+
+    100% {
+        width: 80vw;
+    }
+}
+
+.focus {
+    background-color: blue;
+    margin: 50px auto;
+    width: 50px;
+    height: 100px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all .5s;
+    color: blue;
+
+}
+
+.focus-div {
+    text-align: center;
+}
+
+.focus:hover {
+    background-color: aqua;
+    transform: rotate(360deg);
+}
+
+.scale {
+    background-color: blueviolet;
+    animation: bounceIN infinite;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 20s;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale (1)
+
+    }
+}
