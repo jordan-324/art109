@@ -110,7 +110,7 @@ body {
 
 .scale {
     background-color: blueviolet;
-    animation: bounceIN infinite;
+    animation: bounceIn 3s infinite alternate;
     width: 50px;
     height: 50px;
     border-radius: 20px;
@@ -124,12 +124,12 @@ body {
     }
 
     50% {
-        transform: scale(1.2);
-        opacity: 0.5;
+        transform: scale(2);
+        opacity: 1;
     }
 
     100% {
-        transform: scale (1)
+        transform: scale (1);
 
     }
 }
