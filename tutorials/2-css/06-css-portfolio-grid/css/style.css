@@ -76,6 +76,12 @@ nav a:hover {
     align-items: center;
 }
 
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem
+}
+
 .hamburger {
 display: none;
 background: none;
@@ -87,15 +93,6 @@ font-size: 3rem;
 .hamburger:hover {
     color: var(--accent-1);
 }
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 1rem
-}
-
-
-
 
 main {
     margin: 0%;
@@ -132,11 +129,12 @@ main {
     header {
         padding: 1.5rem 2rem;
     }
-}
 
-.nav-menu a {
+    .nav-menu a {
     color: var(--bg-color-1);
 }
+}
+
 
 @media (max-width:1030px) {
     main {
