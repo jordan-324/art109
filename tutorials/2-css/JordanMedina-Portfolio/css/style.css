@@ -41,6 +41,19 @@ html {
     scroll-behavior: smooth;
 }
 
+a:visited {
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 1rem 1.5rem;
+}
+
+li {
+    margin-bottom: .5rem;
+}
+
 body {
     background-color: var(--bg-color-1);
     color: var(--font);
@@ -53,6 +66,7 @@ body {
 header {
     padding: 5rem 2rem;
     margin-bottom: 7rem;
+    border-bottom: 2px solid var(--accent-1);
 }
 
 header h1 {
@@ -100,43 +114,51 @@ main {
     margin: 0%;
 }
 
-@media (max-width:850px){
-    .navbar {
-        align-items: flex-start;
-    }
-
+@media (max-width: 850px) {
     .nav {
-        display: flex;
-        flex-direction: column;
-
+        position: relative; /* parent for absolute dropdown */
     }
-    
+
     .hamburger {
         display: block;
-        align-self: flex-end;
+        font-size: 3rem;
+        background: none;
+        border: none;
+        color: var(--font);
+        cursor: pointer;
     }
 
     .nav-menu {
-        display: none;
-    }
-
-    .nav-menu.active.active {
-        display: flex;
+        display: none;           /* hidden by default */
         flex-direction: column;
-        background-color: var(--font);
-        padding:1.5rem 0rem;
-
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 200px;            /* adjust width */
+        position: absolute;      /* dropdown relative to .nav */
+        top: 3rem;               /* just under hamburger */
+        right: 0;                /* align with button */
+        background-color: var(--bg-color-2);
+        border: 2px solid var(--accent-1);
+        z-index: 100;
     }
 
-    header {
-        padding: 1.5rem 2rem;
+    .nav-menu.active {
+        display: flex;           /* show menu when active */
     }
 
     .nav-menu a {
-    color: var(--bg-color-1);
-}
-}
+        display: block;
+        padding: 1rem;
+        color: var(--font);
+        text-decoration: none;
+        font-weight: bold;
+    }
 
+    .nav-menu a:hover {
+        color: var(--accent-1);
+    }
+}
 
 @media (max-width:1030px) {
     main {
@@ -161,7 +183,26 @@ main {
     margin:2rem;
     font-family:Arial, Helvetica, sans-serif;
     font-weight:100;
-    text-align:justify;
+    text-align:start;
+}
+
+.contact-section{
+    border-top: 2px solid var(--accent-1);
+    text-align:start;
+}
+
+.contact-section a,
+.contact-section a:visited {
+    color: var(--font);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.contact-section a:hover {
+    color: var(--accent-1);
+}
+.portfolio-section{
+    padding-top: 2rem;
 }
 /* .project-content 4 project pages */
 .project-content {
@@ -184,7 +225,8 @@ main {
     color: var(--bg-color-1);
 }
 
-.portfolio-item a {
+.portfolio-item a,
+.portfolio-item a:visited  {
     text-decoration: none;
     color: var(--bg-color-1);
 }
@@ -219,9 +261,11 @@ line-height:1.6;
 margin-top:30px;
 }
 
-.back-link a{
-text-decoration:none;
+.back-link a,
+.back-link a:visited{
+text-decoration:underline;
 font-weight:bold;
+color: var(--font);
 }
 
 footer {

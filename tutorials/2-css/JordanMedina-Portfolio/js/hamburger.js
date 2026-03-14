@@ -1,5 +1,3 @@
-// console.log("im Here");
-
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.nav-menu');
 
