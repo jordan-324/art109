@@ -197,6 +197,32 @@ main {
     font-size: 1.3rem;
 }
 
+.project-container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.project-image img{
+width:100%;
+height:auto;
+display:block;
+margin-bottom:20px;
+}
+
+.project-info{
+font-size:1rem;
+line-height:1.6;
+}
+
+.back-link{
+margin-top:30px;
+}
+
+.back-link a{
+text-decoration:none;
+font-weight:bold;
+}
 
 footer {
     padding: 1rem 2rem;
