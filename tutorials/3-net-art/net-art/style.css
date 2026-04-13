@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.warcriminals {
+    position: relative;
+    width: 60vw;
+    max-width: 600px;
+    aspect-ratio: 16/10;
+    cursor: pointer;
+}
+
+.warcriminals img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stop {
+    z-index: 1;
+}
+
+.war {
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 2s ease 0.3;
+}
+
+.warcriminals:hover .war {
+    opacity: 0.85;
+}
