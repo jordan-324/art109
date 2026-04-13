@@ -29,9 +29,73 @@ body {
 .war {
     z-index: 2;
     opacity: 0;
-    transition: opacity 2s ease 0.3;
+    transition: opacity 2s ease 0.3s; 
+}
+
+
+.aid {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.aid:visited {
+    color: rgb(255, 255, 255);
+}
+.yearly {
+    opacity: 1;
+    animation: pulse 1.5s infinite ease-in-out;
+    transition: opacity 2s ease;
+}
+
+.total {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    color: #8b0000 !important; /* BLOOD MONEY */ 
 }
 
 .warcriminals:hover .war {
     opacity: 0.85;
+}
+
+.warcriminals:hover .total {
+    opacity: 1;
+    animation: flicker 0.3s infinite;
+}
+
+.warcriminals:hover .yearly {
+    opacity: 0;
+    animation: none;
+}
+
+.flag-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+@keyframes pulse {
+    0% { 
+        transform: translateX(-50%) scale(1); 
+        opacity: 1;
+    }
+    50% { 
+        transform: translateX(-50%) scale(1.08); 
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translateX(-50%) scale(1); 
+        opacity: 1;
+    }
+}
+
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
 }
