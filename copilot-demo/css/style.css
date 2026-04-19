@@ -1,0 +1,133 @@
+/* 
+===================================
+INTERACTIVE COLOR GRID - CSS STYLES
+===================================
+
+This stylesheet creates a full-screen interactive grid where:
+- Squares change to random colors on hover
+- Each square has a ripple animation effect
+- Cursor movement creates a glowing trail effect
+- The grid is responsive and fills the entire viewport
+*/
+
+/* Reset all default margins and padding to have full control over layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make html and body fill the entire screen with no scrollbars */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* 
+===== GRID LAYOUT =====
+Creates a 20x20 grid of squares that fills the entire viewport
+*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+/* 
+===== SQUARE STYLING =====
+Each square can be clicked and has ripple animation capability
+position: relative allows the ::after pseudo-element to be positioned inside
+overflow: hidden clips the ripple animation to the square boundaries
+*/
+.square {
+    background-color: #333333;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 
+===== RIPPLE EFFECT PSEUDO-ELEMENT =====
+The ::after creates the ripple wave that expands outward on hover
+radial-gradient creates a circular glow effect
+scale(0) starts the ripple at size 0 before animation
+*/
+.square::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+}
+
+/* 
+===== RIPPLE ANIMATION TRIGGER =====
+When .ripple class is added to a square, the ::after element animates
+*/
+.square.ripple::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* 
+===== RIPPLE ANIMATION KEYFRAMES =====
+Animates from scale(0) to scale(4), making it expand outward
+opacity goes to 0 so it fades as it expands
+*/
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+/* 
+===== CURSOR TRAIL STYLING =====
+Creates small glowing particles that follow the cursor
+position: fixed keeps them in place on the viewport
+animation: fadeTrail makes them fade and shrink as they age
+pointer-events: none prevents them from interfering with mouse events
+*/
+.cursor-trail {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+    animation: fadeTrail 0.8s ease-out forwards;
+    z-index: 9999;
+}
+
+/* 
+===== FADE TRAIL ANIMATION KEYFRAMES =====
+Fades out the trail particles while making them smaller
+forwards keeps the final state (fully transparent)
+*/
+@keyframes fadeTrail {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
