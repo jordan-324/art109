@@ -601,12 +601,3 @@ footer img {
     border: none;
 }
 
-.project-title {
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 400;
-    text-transform: uppercase;
-
-    opacity: 0.7;
-    margin-bottom: 40px;
-}
