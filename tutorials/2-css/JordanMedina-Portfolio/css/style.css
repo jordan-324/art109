@@ -433,6 +433,28 @@ footer img {
     opacity: 0.9;
 }
 
+.statement-section {
+    margin-top: 80px;
+}
+
+.statement-section h2 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+
+.statement-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.85;
+
+    margin-bottom: 20px;
+}
+
 /* sleek back button */
 .back-button {
     display: block;
